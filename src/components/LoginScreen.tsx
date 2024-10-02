@@ -19,7 +19,7 @@ const LoginScreen: React.FC = () => {
     e.preventDefault();
 
     if (!email || !password) {
-      toast.error('Please fill out both fields');
+      toast.error(`${t('Please fill out both fields')}`);
       return;
     }
 
@@ -29,10 +29,10 @@ const LoginScreen: React.FC = () => {
       });       
 
       localStorage.setItem('accessToken', data.login.jwt);
-      toast.success('Login successful!');
+      toast.success(`${t('Login successful!')}`);
       navigate('/account');
     } catch (error) {
-      toast.error('Login failed. Please check your credentials.');
+      toast.error(`${t('Login failed. Please check your credentials.')}`);
     }
   };
 

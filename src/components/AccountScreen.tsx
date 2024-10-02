@@ -23,11 +23,11 @@ const AccountScreen: React.FC = () => {
     variables: { id: userId },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>{t("Loading...")}</p>;
   if (error) {
     console.log(error);
     
-    toast.error('Failed to load user details.');
+    toast.error(`${t('Failed to load user details.')}`);
     return <p>Error: {error.message}</p>;
   }
 
